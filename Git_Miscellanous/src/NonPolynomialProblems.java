@@ -7,17 +7,16 @@ public class NonPolynomialProblems {
 	 * Take each sequence ,multiply the respective bit with element in the set at that position, then find the sum 
 	 * if it is equal then stop processing and return the subset/combination of numbers .
 	 */
-	
-	
 	boolean binSeq(int[] a,int n,int[] k) {
-		
 		if(n<=0) {
 			int sum=0;
 			int totalSum = 0;
-			for(int i=0;i<a.length;i++) {
+			for(int i=a.length-1;i>=0;i--) {
+				System.out.print(" "+a[i]);
 				sum = sum +(a[i]*k[i]);
 				totalSum =totalSum+k[i];
 			}
+			System.out.println();
 			if(sum == totalSum/2) {
 				System.out.print("The Subset is :");
 				for(int i=0;i<a.length;i++) {
@@ -29,17 +28,20 @@ public class NonPolynomialProblems {
 		}
 		else {
 			a[n-1]=0;
-			boolean first = binSeq(a,n-1,k);
+			boolean first = binSeq(a,n-1,k);  //It forms even sequence
 			if(first)
 				return first;
 			
 			a[n-1]=1;
-			boolean last =binSeq(a,n-1,k);
+			boolean last =binSeq(a,n-1,k);    //It forms odd sequence
 			return last;
 		}
 		return false;
 	}
 	
+	
+	
+	//Traveling Salesmen problem or Find all the permutations for the given 
 	
 	
 }

@@ -7,6 +7,7 @@ public class TestMiscellanous {
 		int[] a= {1,3,4,8,10};
 		int[] b = {1,3,4,8,10};
 		NonPolynomialProblems np = new NonPolynomialProblems();
+		System.out.print("Sequence=");
 		boolean match = np.binSeq(a, a.length, b);
 		System.out.println();
 		System.out.println("Is the subset Match ="+match);  
